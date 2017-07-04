@@ -26,6 +26,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    # new julian code added
+    if @user.id.present?
+      session[:user_id] = @user.id # log in using when making a new account
+      redirect_to user_path(@user.id)   # /users/17
+    end
+
+    # end new julian code
+
+
+
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
