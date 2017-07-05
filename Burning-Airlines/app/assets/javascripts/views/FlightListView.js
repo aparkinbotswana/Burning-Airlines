@@ -6,7 +6,8 @@ app.FlightListView = Backbone.View.extend({
 
 
   events: {
-    "click button": "showFlight"
+    "click": "showFlight",
+
   },
 
   showFlight: function () {
@@ -45,4 +46,7 @@ app.FlightListView = Backbone.View.extend({
   //
 
   }
+
+
+
 });
