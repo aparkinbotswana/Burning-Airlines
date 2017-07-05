@@ -14,7 +14,6 @@ $(document).ready(function (){
   // Once the DOM is loaded, fetch the posts from the Rails AJAX endpoint ("/posts")
 
   app.flights.fetch().done(function () {
-    debugger;
     // ... when the fetch() ajax request is finished, we're ready to start the app
     Backbone.history.start();
   });

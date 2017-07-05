@@ -2,7 +2,7 @@ var app = app || {};
 
 app.FlightListView = Backbone.View.extend({
 
-  tagName: "div",
+  tagName: "tr",
 
 
   events: {

@@ -14,27 +14,26 @@
   <div id="searchResults">
   </div>
 
-  <div id="flights">
+  <div>
+    <table>
+      <thead>
+        <tr>
+         <th>Flight</th>
+         <th>Date</th>
+         <th>From</th>
+         <th>To</th>
+         <th>Plane</th>
+        </tr>
+      </thead>
+      <tbody id="flights"></tbody>
+    </table>
   </div>
 
 </script>
 
 <script type="html/template" id="FlightViewTemplate">
   <h2>{{ date }} - Flight#{{name}} - {{ from }} to {{ to }} - {{ seats }} seats </h2>
-
-
 </script>
-
-<script type="html/template" id="SearchViewTemplate">
-  <h1>Flight booking</h1>
-
-  <td>{{ name }}</td>
-  <td>{{ date }}</td>
-  <td>{{ from }}</td>
-  <td>{{ to }}</td>
-
-</script>
-
 
 
 <script type="html/template" id="FlightInfoTemplate">
@@ -43,6 +42,7 @@
   <td>{{ date }}</td>
   <td>{{ from }}</td>
   <td>{{ to }}</td>
+  <td>{{ airplane.name }}</td>
 
 </script>
 
