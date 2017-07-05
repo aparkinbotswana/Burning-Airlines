@@ -18,7 +18,7 @@ app.GridView = Backbone.View.extend({
   var rowsize = this.model.attributes.airplane.row;
   var colsize = this.model.attributes.airplane.column;
   var totalSeats = rowsize * colsize;
-  var seatsTaken;
+  var seatsTaken = 0;
   var seatsLeft = totalSeats - seatsTaken;
 
   console.log(rowsize, colsize);
@@ -62,7 +62,7 @@ app.GridView = Backbone.View.extend({
       console.log($(this).attr('colid'));
       console.log($(this).attr('rowid'));
       seatsTaken += 1
-      console.log(seatsTaken);
+      console.log('there are ' + seatsTaken + ' seats taken');
 
     });
 
