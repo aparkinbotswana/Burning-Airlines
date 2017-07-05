@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704093104) do
+ActiveRecord::Schema.define(version: 20170705010149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20170704093104) do
   create_table "airplanes", force: :cascade do |t|
     t.integer  "name"
     t.integer  "row"
-    t.string   "column"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "column"
   end
 
   create_table "flights", force: :cascade do |t|
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20170704093104) do
     t.string   "email"
     t.string   "password_digest"
     t.boolean  "is_admin"
-    t.string   "false"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
