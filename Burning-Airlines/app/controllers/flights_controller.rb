@@ -7,11 +7,6 @@ class FlightsController < ApplicationController
     @flights = Flight.all
   end
 
-  def grid
-    puts  'shit'
-
-  end
-
   # GET /flights/1
   # GET /flights/1.json
   def show

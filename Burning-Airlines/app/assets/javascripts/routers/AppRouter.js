@@ -4,8 +4,9 @@ app.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
     'app': 'index',
-    'app/:id': 'showFlight',
-    'app/grid': 'showGrid'
+    'grid': 'showGrid',
+    'app/:id': 'showFlight'
+
   },
 
   index: function () {
@@ -31,19 +32,19 @@ console.log('sup you');
 
   },
 
-  // showGrid: function (  ){
-  //   console.log("this is the grid view, you handsome devil.");
-  //   // var flight = app.flights.get( id );
-  //
-  //   var gv = new app.GridView({
-  //     // model: airplane
-  //
-  //   });
-  //
-  //   gv.render();
-  //
-  //
-  // }
+  showGrid: function (  ){
+    console.log("this is the grid view, you handsome devil.");
+    // var flight = app.flights.get( id );
+
+    var gv = new app.GridView({
+      // model: airplane
+
+    });
+
+    gv.render();
+
+
+  }
 
 
 });
