@@ -2,10 +2,7 @@ var app = app || {};
 
 app.SearchFlightView = Backbone.View.extend({
 
-<<<<<<< HEAD
   tagName: "tr",
-=======
-  tagName: "div",
 
   events: {
     "click": "showFlight",
@@ -37,7 +34,7 @@ app.SearchFlightView = Backbone.View.extend({
   //   });
   //
   // },
->>>>>>> a9d07b6eb7e9ff5745720f87ed8d35b8d989f828
+
 
   render: function () {
     var rawTemplate = $('#FlightInfoTemplate').html();
