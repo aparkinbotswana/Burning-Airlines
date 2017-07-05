@@ -15,16 +15,12 @@ app.GridView = Backbone.View.extend({
     // renderGrid(4,6);
 
 
-
-    // var markup = template( this.model.attributes );
-    // console.log(markup);
-    // this.$el.html( markup );
-//     this.$el.appendTo( "#grid" );
-// console.log(this.$el);
-
-
   var rowsize = this.model.attributes.airplane.row;
   var colsize = this.model.attributes.airplane.column;
+  var totalSeats = rowsize * colsize;
+  var seatsTaken;
+  var seatsLeft = totalSeats - seatsTaken;
+
   console.log(rowsize, colsize);
 
   var row = _.range(1, rowsize+1);
@@ -40,6 +36,9 @@ app.GridView = Backbone.View.extend({
     });
   });
 
+  var $seats = $('<p>').html(seatsLeft);
+  $seats.appendTo('#seat')
+  console.log(seatsTaken);
   // for (var rows = 0; rows < rowsize; rows++) {
   //
   //   // set each row to be a new empty array (i.e. of column values)
@@ -60,6 +59,8 @@ app.GridView = Backbone.View.extend({
 
     $('.seat').click(function(){
     $(this).attr('src',"assets/seattaken.png");
+    seatsTaken += 1
+    console.log(seatsTaken);
      });
 
 
@@ -67,10 +68,4 @@ app.GridView = Backbone.View.extend({
 
 
   },
-
-
-
-
-
-
 });
