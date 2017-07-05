@@ -11,18 +11,7 @@
     <hr/>
   </div>
 
-  <div id="flights">
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Date</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Plane</th>
 
-      </tr>
-    </table>
-  </div>
 
   <div id="searchResults">
     <table>
@@ -35,6 +24,10 @@
       </tr>
     </table>
   </div>
+
+  <div id="flights">
+  </div>
+
 </script>
 
 <script type="html/template" id="FlightViewTemplate">
@@ -49,6 +42,17 @@
 
 <script type="html/template" id="SearchViewTemplate">
   <h1>Flight booking</h1>
+
+  <td>{{ name }}</td>
+  <td>{{ date }}</td>
+  <td>{{ from }}</td>
+  <td>{{ to }}</td>
+
+</script>
+
+
+
+<script type="html/template" id="FlightInfoTemplate">
 
   <td>{{ name }}</td>
   <td>{{ date }}</td>
