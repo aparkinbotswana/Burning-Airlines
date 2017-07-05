@@ -85,7 +85,9 @@ r1 = Reservation.create row: 01, column: 'A'
 #
 
 u1.reservations << r1
-# f1.reservations << r1
+
+
+f1.reservations << r1
 
 # r1.users << u1
 # r1.flights << f1
