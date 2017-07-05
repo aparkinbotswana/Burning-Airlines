@@ -5,6 +5,9 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
+
+    # render :json => @flights, :include => {:insurer => {:only => :name}}, :except => [:created_at, :updated_at]
+    #
   end
 
   # GET /flights/1
