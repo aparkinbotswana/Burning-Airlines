@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :flights
   resources :airplanes
   resources :users
+  get '/grids' => 'grids#grid'          
 
   # new julian code
   get '/login' => 'session#new'         #login form
