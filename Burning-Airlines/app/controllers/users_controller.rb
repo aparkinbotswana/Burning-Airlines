@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     # new julian code added
     if @user.id.present?
       session[:user_id] = @user.id # log in using when making a new account
-      redirect_to user_path(@user.id)   # /users/17
+      redirect_to root_path   # /users/17
     else
       render :new
     end
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
 
 
 
-    # 
+    #
     # respond_to do |format|
     #   if @user.save
     #     format.html { redirect_to user_path(@user), notice: 'User was successfully created.' }
