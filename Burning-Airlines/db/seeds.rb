@@ -84,11 +84,15 @@ r1 = Reservation.create row: 01, column: 'A'
 # r4 = Reservation.create user_id: 4, flight_id: 4, row: 01, column: 'A'
 #
 
-# u1.reservations << r1
+u1.reservations << r1
 # f1.reservations << r1
 
 # r1.users << u1
 # r1.flights << f1
+
+# f1 = Flight.create name: 27, date: "2017-12-20", to: 'MEL', from: 'SYD', seats: 80
+#
+# a1.flights << f1
 
 
 
