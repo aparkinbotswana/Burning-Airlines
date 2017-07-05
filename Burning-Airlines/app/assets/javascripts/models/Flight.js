@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.Flight = Backbone.Model.extend({
-  urlRoot: '/app',
+  urlRoot: '/flights',
 
   // defaults: {
   //   content: "I hate water"
