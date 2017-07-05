@@ -17,7 +17,7 @@ class SessionController < ApplicationController
     #
     # redirect_to user_path(user)
 
-    if user.present? and user.authenticate params[:password]
+    if user.present? and user.authenticate(params[:password])
 
       # new julian code -- not working
 
@@ -35,6 +35,6 @@ class SessionController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to login_path
   end
 end
