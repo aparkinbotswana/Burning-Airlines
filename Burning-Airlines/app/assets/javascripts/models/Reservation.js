@@ -1,7 +1,7 @@
 var app = app || {};
 
-app.Airplane = Backbone.Model.extend({
-  urlRoot: '/airplanes',
+app.Reservation = Backbone.Model.extend({
+  urlRoot: '/reservations',
 
   initialize: function () {
     console.log('A new airplane was made.');
