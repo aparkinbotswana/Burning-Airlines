@@ -3,33 +3,58 @@
 <div id="app"></div>
 
 <script type="html/template" id="AppViewTemplate">
-<div id="appView">
-  <h1>Flight Search</h1>
-  <hr/>
-  <textarea placeholder="Search Flight"></textarea>
-  <br>
-  <button>Search</button>
-  <ul id="flights"></ul>
+  <div id="searchFlights">
+    <h1>Flight Search</h1>
+    <input id="from" type="text" placeholder="from"/>
+    <input id="to" type="text" placeholder="to"/>
+    <button>Search</button>
+    <hr/>
+  </div>
 
-</div>
+  <div id="searchResults">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>From</th>
+        <th>To</th>
+      </tr>
+    </table>
+  </div>
 
-
+  <div id="flights">
+  </div>
 
 </script>
 
 <script type="html/template" id="FlightViewTemplate">
-<h1>Flight booking</h1>
+  <h1>Flight booking</h1>
+
+  <td>{{ name }}</td>
+  <td>{{ date }}</td>
+  <td>{{ from }}</td>
+  <td>{{ to }}</td>
+
+</script>
+
+<script type="html/template" id="SearchViewTemplate">
+  <h1>Flight booking</h1>
+
+  <td>{{ name }}</td>
+  <td>{{ date }}</td>
+  <td>{{ from }}</td>
+  <td>{{ to }}</td>
+
+</script>
 
 
-// <h2>
-//     {{ title }}
-//   </h2>
-//
-//   <h3>
-//    Written by: {{ author }}
-//   </h3>
-//
-//   </div>
+
+<script type="html/template" id="FlightInfoTemplate">
+
+  <td>{{ name }}</td>
+  <td>{{ date }}</td>
+  <td>{{ from }}</td>
+  <td>{{ to }}</td>
 
 </script>
 
