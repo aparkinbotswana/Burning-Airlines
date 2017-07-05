@@ -1,14 +1,18 @@
 var app = app || {};
 
-app.FlightListView = Backbone.View.extend({
+app.SearchFlightView = Backbone.View.extend({
 
   tagName: "li",
 
   events: {
-    "click button": "showFlight"
+    "click button": "searchFlights"
   },
 
-  showFlight: function () {
+  searchFlights: function () {
+    var $from = $('#from').val();
+    var $to = $('#to').val();
+    console.log($from, $to);
+
     var id = this.model.get('id');
     app.router.navigate("/flights/" + id, true)
   },
