@@ -21,12 +21,12 @@ app.AppRouter = Backbone.Router.extend({
     console.log('routed show flight');
     var flight = app.flights.get( id );
 
-    var fv = new app.FlightView({
-      model: flight
+    var av = new app.AirplaneView({
+      model: airplane
 
     });
 
-    fv.render();
+    av.render();
 
 
   }
