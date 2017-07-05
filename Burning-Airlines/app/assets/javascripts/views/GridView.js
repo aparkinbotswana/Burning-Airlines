@@ -26,12 +26,12 @@ app.GridView = Backbone.View.extend({
   var row = _.range(1, rowsize+1);
   var col = _.range(1, colsize+1);
 
-  _.each(row, function() {
+  _.each(row, function(rowid) {
     var $row = $('<tr>');
     $row.appendTo("#table");
-    _.each(col, function() {
-      var $col = $('<td>').css('width', '20px');
-      $('<img class="seat" src="assets/seatempty.png">').appendTo($col);
+    _.each(col, function(colid) {
+      var $col = $('<td>');
+      $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
       $col.appendTo($row);
     });
   });
@@ -58,10 +58,13 @@ app.GridView = Backbone.View.extend({
   //   };
 
     $('.seat').click(function(){
-    $(this).attr('src',"assets/seattaken.png");
-    seatsTaken += 1
-    console.log(seatsTaken);
-     });
+      $(this).attr('src',"assets/seattaken.png");
+      console.log($(this).attr('colid'));
+      console.log($(this).attr('rowid'));
+      seatsTaken += 1
+      console.log(seatsTaken);
+
+    });
 
 
 

@@ -35,6 +35,7 @@ app.SearchFlightView = Backbone.View.extend({
   //
   // },
 
+
   render: function () {
     var rawTemplate = $('#FlightInfoTemplate').html();
     // this.$el.html( template );
