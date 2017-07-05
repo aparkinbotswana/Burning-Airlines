@@ -4,6 +4,7 @@ app.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
     'app': 'index',
+    'grid': 'showGrid',
     'flights/:id': 'showFlight'
   },
 
