@@ -5,8 +5,8 @@
 <script type="html/template" id="AppViewTemplate">
   <div id="searchFlights">
     <h1>Flight Search</h1>
-    <input type="text" placeholder="from"/>
-    <input type="text" placeholder="to"/>
+    <input id="from" type="text" placeholder="from"/>
+    <input id="to" type="text" placeholder="to"/>
     <button>Search</button>
     <hr/>
   </div>
@@ -17,7 +17,9 @@
         <th>Name</th>
         <th>Date</th>
         <th>From</th>
-        <th>to</th>
+        <th>To</th>
+        <th>Plane</th>
+
       </tr>
     </table>
   </div>
@@ -28,18 +30,29 @@
         <th>Name</th>
         <th>Date</th>
         <th>From</th>
-        <th>to</th>
+        <th>To</th>
+        <th>Plane</th>
       </tr>
     </table>
   </div>
 </script>
 
 <script type="html/template" id="FlightViewTemplate">
-<h1>Flight booking</h1>
+  <h1>Flight booking</h1>
 
-<td>{{ name }}</td>
-<td>{{ date }}</td>
-<td>{{ from }}</td>
-<td>{{ to }}</td>
+  <td>{{ name }}</td>
+  <td>{{ date }}</td>
+  <td>{{ from }}</td>
+  <td>{{ to }}</td>
+
+</script>
+
+<script type="html/template" id="SearchViewTemplate">
+  <h1>Flight booking</h1>
+
+  <td>{{ name }}</td>
+  <td>{{ date }}</td>
+  <td>{{ from }}</td>
+  <td>{{ to }}</td>
 
 </script>

@@ -14,6 +14,4 @@ app.FlightView = Backbone.View.extend({
   }
 
 
-
-
 });
