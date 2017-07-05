@@ -22,13 +22,20 @@ app.AppRouter = Backbone.Router.extend({
     console.log('routed show flight');
     var flight = app.flights.get( id );
 
+    // 
+    // var av = new app.AirplaneView({
+    //   model: airplane
+    //
+    // });
+    //
+    // av.render();
 
-    var av = new app.AirplaneView({
-      model: airplane
+    var gv = new app.GridView({
+      model: flight
 
     });
 
-    av.render();
+    gv.render();
 
 
   },
@@ -37,7 +44,7 @@ app.AppRouter = Backbone.Router.extend({
     console.log("this is the grid view, you handsome devil.");
 
     var gv = new app.GridView({
-      // model: airplane
+      model: flight
 
     });
 
