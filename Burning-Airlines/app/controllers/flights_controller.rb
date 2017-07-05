@@ -6,17 +6,10 @@ class FlightsController < ApplicationController
   def index
     @flights = Flight.all
 
-<<<<<<< HEAD
-    # render :json => @flights, :include => {:airplane => {:only => :seats, :row, :column}}, :except => [:created_at, :updated_at]
-
-    # render :json => @flights, :include => {:insurer => {:only => :name}}, :except => [:created_at, :updated_at]
-    #
-=======
     respond_to do |format|
      format.html {}
      format.json {  render json: @flights, :include => :airplane }
     end
->>>>>>> cc7e3aab838acf518455c27992305d5ddb2f244e
   end
 
   # GET /flights/1
