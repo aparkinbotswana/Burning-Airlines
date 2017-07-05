@@ -23,7 +23,7 @@ class SessionController < ApplicationController
       session[:user_id] = user.id # set the cookie to the user id
       # redirect_to root_path # redirect to user profile
       if user.is_admin
-        redirect_to flights_path
+        redirect_to airplanes_path
       else
         redirect_to root_path
       end
