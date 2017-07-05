@@ -22,7 +22,7 @@ app.GridView = Backbone.View.extend({
 //     this.$el.appendTo( "#grid" );
 // console.log(this.$el);
 
-
+  console.log(this.model);
   var rowsize = 4;
   var colsize = 12;
 

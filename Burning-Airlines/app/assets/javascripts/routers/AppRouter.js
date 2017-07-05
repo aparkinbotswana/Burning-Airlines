@@ -37,7 +37,6 @@ app.AppRouter = Backbone.Router.extend({
     console.log("this is the grid view, you handsome devil.");
 
     var gv = new app.GridView({
-      // model: airplane
 
     });
 
