@@ -6,7 +6,7 @@ _.templateSettings = {
 };
 
 app.flights = new app.Flights();
-app.airplanes = new app.Airplanes();
+app.reservations = new app.Reservations();
 
 app.router = new app.AppRouter();
 

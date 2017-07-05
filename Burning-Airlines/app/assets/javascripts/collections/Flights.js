@@ -5,7 +5,7 @@ app.Flights = Backbone.Collection.extend({
   model: app.Flight,
 
   initialize: function(){
-    this.on("Add", function( book  ){
+    this.on("Add", function( flight  ){
       var name = flight.get('name');
       console.log('A new flight collection ' + name + ' was created');
 
