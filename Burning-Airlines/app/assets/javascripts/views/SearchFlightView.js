@@ -4,6 +4,16 @@ app.SearchFlightView = Backbone.View.extend({
 
   tagName: "div",
 
+  events: {
+    "click": "showFlight",
+
+  },
+
+  showFlight: function () {
+    var id = this.model.get('id');
+    app.router.navigate("/flights/" + id, true)
+  },
+
   // events: {
   //   "click button": "searchFlights"
   // },
