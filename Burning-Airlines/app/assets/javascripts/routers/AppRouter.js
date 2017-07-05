@@ -4,7 +4,7 @@ app.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
     'app': 'index',
-    'app/:id': 'showFlight'
+    'flights/:id': 'showFlight'
   },
 
   index: function () {
@@ -18,6 +18,7 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   showFlight: function ( id ){
+    console.log('routed show flight');
     var flight = app.flights.get( id );
 
     var fv = new app.FlightView({
