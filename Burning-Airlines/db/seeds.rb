@@ -21,12 +21,26 @@ a3 = Airplane.create name: 747, row: 25, column: 4
 #   t.datetime "updated_at", null: false
 # end
 #
+
+
+
+
+
+
+
+
 Flight.destroy_all
 
-f1 = Flight.create name: 27, date: '2017-12-20', to: 'MEL', from: 'SYD', seats: 80, airplane_id: 1
-f2 = Flight.create name: 69, date: '2017-11-20', to: 'BRI', from: 'SYD', seats: 80, airplane_id: 2
-f3 = Flight.create name: 10, date: '2017-10-20', to: 'PER', from: 'SYD', seats: 100, airplane_id: 3
-f4 = Flight.create name: 29, date: '2017-10-23', to: 'PER', from: 'SYD', seats: 100, airplane_id: 3
+f1 = Flight.create name: 27, date: "2017-12-20", to: 'MEL', from: 'SYD', seats: 80
+# f2 = Flight.create name: 69, date: "2017-11-20", to: 'BRI', from: 'SYD', seats: 80, airplane_id: 2
+# f3 = Flight.create name: 9, date: "2017-10-20", to: 'PER', from: 'SYD', seats: 100, airplane_id: 3
+# f4 = Flight.create name: 29, date: "2017-10-23", to: 'PER', from: 'SYD', seats: 100, airplane_id: 3
+
+a1.flights << f1
+
+
+
+
 
 # create_table "flights", force: :cascade do |t|
 #   t.integer  "name"
@@ -41,10 +55,12 @@ f4 = Flight.create name: 29, date: '2017-10-23', to: 'PER', from: 'SYD', seats: 
 #
 User.destroy_all
 
-u1 = User.create name: 'James Theo', email: 'chicken@chicken.com', password_digest: 'chicken', is_admin: true
-u2 = User.create name: 'Theo James', email: 'chickens@chickens.com', password_digest: '$2a$04$gSYb1zzYnNOEuLTzLMqFMusG9NjdZdG2cf3CeXnsr2januZoA2Ph.', is_admin: true
-u3 = User.create name: 'Hello', email: 'hello@hello.com', password_digest: 'chicken', is_admin: false
-u4 = User.create name: 'Hello Hello', email: 'hellohello@hellohello.com', password_digest: '$2a$04$gSYb1zzYnNOEuLTzLMqFMusG9NjdZdG2cf3CeXnsr2januZoA2Ph.', is_admin: false
+u1 = User.create name: 'James Theo', email: 'chicken@chicken.com', password: 'chicken', is_admin: false
+u2 = User.create name: 'Theo James', email: 'admin@admin.com', password: 'chicken', is_admin: true
+
+
+# u3 = User.create name: 'Hello', email: 'hello@hello.com', password_digest: 'chicken', is_admin: false
+# u4 = User.create name: 'Hello Hello', email: 'hellohello@hellohello.com', password_digest: '$2a$04$gSYb1zzYnNOEuLTzLMqFMusG9NjdZdG2cf3CeXnsr2januZoA2Ph.', is_admin: false
 
 # create_table "users", force: :cascade do |t|
 #   t.string   "name"
@@ -55,15 +71,28 @@ u4 = User.create name: 'Hello Hello', email: 'hellohello@hellohello.com', passwo
 #   t.datetime "created_at",      null: false
 #   t.datetime "updated_at",      null: false
 # end
+
+#
 Reservation.destroy_all
-r1 = Reservation.create user_id: 3, flight_id: 1, row: 10, column: 'A'
-r2 = Reservation.create user_id: 4, flight_id: 1, row: 10, column: 'A'
-r3 = Reservation.create user_id: 3, flight_id: 2, row: 10, column: 'A'
-r4 = Reservation.create user_id: 4, flight_id: 2, row: 10, column: 'A'
-r1 = Reservation.create user_id: 3, flight_id: 3, row: 10, column: 'A'
-r2 = Reservation.create user_id: 4, flight_id: 3, row: 10, column: 'A'
-r3 = Reservation.create user_id: 3, flight_id: 4, row: 10, column: 'A'
-r4 = Reservation.create user_id: 4, flight_id: 4, row: 10, column: 'A'
+r1 = Reservation.create row: 01, column: 'A'
+# r2 = Reservation.create user_id: 4, flight_id: 1, row: 01, column: 'A'
+# r3 = Reservation.create user_id: 3, flight_id: 2, row: 01, column: 'A'
+# r4 = Reservation.create user_id: 4, flight_id: 2, row: 01, column: 'A'
+# r1 = Reservation.create user_id: 3, flight_id: 3, row: 01, column: 'A'
+# r2 = Reservation.create user_id: 4, flight_id: 3, row: 01, column: 'A'
+# r3 = Reservation.create user_id: 3, flight_id: 4, row: 01, column: 'A'
+# r4 = Reservation.create user_id: 4, flight_id: 4, row: 01, column: 'A'
+#
+
+# u1.reservations << r1
+# f1.reservations << r1
+
+# r1.users << u1
+# r1.flights << f1
+
+
+
+
 
 # create_table "reservations", force: :cascade do |t|
 #   t.integer  "user_id"

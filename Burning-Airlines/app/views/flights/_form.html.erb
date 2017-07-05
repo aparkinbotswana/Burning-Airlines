@@ -36,10 +36,29 @@
     <%= f.number_field :seats %>
   </div>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :airplane_id %>
     <%= f.number_field :airplane_id %>
+  </div> -->
+
+  <!--  -->
+
+  <div class="field">
+    <%= f.label :airplane %>
+    <%= collection_select(  :flight, :airplane_id, Airplane.all, :id, :name, {}, { :multiple => false } ) %>
   </div>
+
+  <!--  -->
+
+
+
+
+
+
+
+  <!-- <%= label_tag :plane %>
+  <%= text_field_tag :plane %>
+  <br><br> -->
 
   <div class="actions">
     <%= f.submit %>
