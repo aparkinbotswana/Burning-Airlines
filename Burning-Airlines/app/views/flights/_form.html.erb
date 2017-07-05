@@ -33,6 +33,8 @@
 
 
 
+
+
   <!-- <div class="field">
     <%= f.label :airplane_id %>
     <%= f.number_field :airplane_id %>
@@ -44,6 +46,14 @@
     <%= f.label :airplane %>
     <%= collection_select(  :flight, :airplane_id, Airplane.all, :id, :name, {}, { :multiple => false } ) %>
   </div>
+
+  <div class="field">
+    <%= f.label :airplane %>
+    <%= collection_select(  :flight, :airplane_id, Airplane.all, :id, :name, {}, { :multiple => false } ) %>
+  </div>
+
+
+
 
   <!--  -->
 
