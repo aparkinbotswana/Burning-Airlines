@@ -6,6 +6,8 @@ class FlightsController < ApplicationController
   def index
     @flights = Flight.all
 
+    render :json => @flights, :include => {:airplane => {:only => :seats, :row, :column}}, :except => [:created_at, :updated_at]
+
     # render :json => @flights, :include => {:insurer => {:only => :name}}, :except => [:created_at, :updated_at]
     #
   end
