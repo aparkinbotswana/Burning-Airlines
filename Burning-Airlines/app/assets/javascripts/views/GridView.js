@@ -40,7 +40,12 @@ app.GridView = Backbone.View.extend({
     $row.appendTo("#table");
     _.each(col, function(colid) {
       var $col = $('<td>');
-      $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
+
+
+      // $('<img class="seat">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
+      $col.addClass('seat');
+
+      // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
       $col.appendTo($row);
     });
   });
@@ -69,9 +74,20 @@ app.GridView = Backbone.View.extend({
   //
   //   };
     var alphabet = ["a","b","c","d"];
+      var currentimage;
 
     $('.seat').click(function(){
-      $(this).attr('src',"assets/seattaken.png");
+
+
+      // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
+
+      // $(this).attr('src',"assets/seattaken.png");
+      // $(this).addClass( "active");
+
+      $(".seat").not(this).removeClass('active');
+      $(this).toggleClass('active');
+
+      console.log($(this));
       console.log($(this).attr('colid'));
       console.log($(this).attr('rowid'));
       seatsTaken += 1
@@ -79,8 +95,12 @@ app.GridView = Backbone.View.extend({
       $colselect = alphabet[($(this).attr('colid')) - 1] ;
       $rowselect = ($(this).attr('rowid'));
       console.log("col:" + $colselect + "row:" + $rowselect);
+      // var currentimage = $(this);
+
 
     });
+
+
 
     $('#buy').click(function() {
       console.log('buy', $colselect, $rowselect);
@@ -97,7 +117,6 @@ app.GridView = Backbone.View.extend({
 
     });
 
-    });
 
 
 
@@ -107,14 +126,6 @@ app.GridView = Backbone.View.extend({
 
 
   }
-
-
-  // buyticket: function(){
-  //   console.log("buyticket", $colselect, $rowselect);
-  //
-  //
-  //
-  // }
 
 
   // buyticket: function(){

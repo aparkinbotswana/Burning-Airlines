@@ -13,9 +13,34 @@
 }
 
 .seat {
-  position: relative;
+  background:url('seatempty.png');
+  background-size: contain;
+  /*position: relative;*/
   top:6px;
   z-index: 100;
   width:30px;
   height:30px;
+}
+
+.active {
+background:url('seattaken.png');
+background-size: contain;
+background-repeat: no-repeat;
+top:6px;
+z-index: 100;
+width:30px;
+height:30px;
+
+}
+
+.bought {
+background:url('seattaken.png');
+background-size: contain;
+background-repeat: no-repeat;
+border: red 0.5px solid;
+top:6px;
+z-index: 100;
+width:30px;
+height:30px;
+
 }
