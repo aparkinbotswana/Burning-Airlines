@@ -34,6 +34,7 @@ class ReservationsController < ApplicationController
   # POST /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
+    
     if @current_user.present?
       @reservation.user_id = @current_user.id
       @reservation.save
@@ -82,6 +83,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:user_id, :flight_id, :row, :column)
+      params.require(:reservation).permit(:user_id, :flight_id, :row, :column, :seatid)
     end
 end
