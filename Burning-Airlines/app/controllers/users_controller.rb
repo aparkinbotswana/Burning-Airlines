@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
   # new julian code
   before_action :check_if_admin, only: [:index]
-  before_action :check_if_logged_in, only: [:show, :edit, :update, :destroy]
 
   def get_user
     @user = User.find params["id"]
@@ -116,12 +115,6 @@ class UsersController < ApplicationController
       #new julian code
       params.require(:user).permit(:email, :name, :password, :password_confirmation)
       #end new julian code
-
-
-
       # params.require(:user).permit(:name, :email, :password_digest, :is_admin, :false)
-
-
-
     end
 end
