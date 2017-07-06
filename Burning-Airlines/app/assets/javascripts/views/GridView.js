@@ -20,6 +20,9 @@ app.GridView = Backbone.View.extend({
       rlv.render();
    };
 
+   app.router.navigate("/reservation", true)
+
+
   },
 
 
