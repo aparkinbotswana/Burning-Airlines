@@ -77,3 +77,11 @@ a {
     color:red;
 
 }
+
+#flightindex{
+  display: inline-block;
+  position: fixed;
+  left:500px;
+
+
+}

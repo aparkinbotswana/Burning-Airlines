@@ -6,6 +6,7 @@ app.GridView = Backbone.View.extend({
 
   events: {
     "click #reservations": "showReservation",
+    "click #searchpage": "searchPage"
   },
 
   showReservation: function(){
@@ -23,12 +24,17 @@ app.GridView = Backbone.View.extend({
 
   //  app.router.navigate("/reservation", true)
 
-   _.each(app.reservations.model, function(reservation) {
-     var rv = new app.ReservationView({
-       model: reservation
-     });
-     rv.render();
-   });
+    this.$el.empty();
+    this.$el.html("<h1>Reservations</h1>");
+    app.router.navigate("/reservation", true)
+
+
+  //  _.each(app.reservations.model, function(reservation) {
+  //    var rv = new app.ReservationView({
+  //      model: reservation
+  //    });
+  //    rv.render();
+  //  });
 
 
   },
@@ -36,24 +42,16 @@ app.GridView = Backbone.View.extend({
 
 
 
-  // events: {
-  //   'click .seat': 'selectSeat'
-  //
-  //   "click #buy": "buyticket",
-  // },
-
-
-
  render: function () {
 
 
-   // var rawTemplate = $('#GridViewTemplate').html();
+
     var template = _.template($("#GridViewTemplate").html(), {} );
     var markup = template( this.model.attributes );
 
    this.$el.html( markup );
 
-   // renderGrid(4,6);
+
 
 
 
@@ -81,7 +79,7 @@ app.GridView = Backbone.View.extend({
 
 
 
-     // $('<img class="seat">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
+
       $col.addClass('seat').attr('seatid', alphabet[colid - 1] + rowid);
 
       if ( _.includes(seatsReserved, $col.attr('seatid')) ) {
@@ -90,7 +88,7 @@ app.GridView = Backbone.View.extend({
 
 
 
-     // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
+
       $col.appendTo($row);
     });
   });
@@ -99,23 +97,7 @@ app.GridView = Backbone.View.extend({
   var $seatSelect;
 
 
- // for (var rows = 0; rows < rowsize; rows++) {
-  //
-  //   // set each row to be a new empty array (i.e. of column values)
-  //
-  //   for (var cols = 0; cols < colsize; cols++) {
-  //     var $cell = $('<div class="cell">');
-  //     $('<img class="seat" src="assets/seatempty.png">').appendTo($cell);
-  //     $cell.attr('rows', rows).attr('cols', cols);
-  //     $('#table').append($cell);
-  //   }
 
-   // var tableWidth = 400 + (rowsize * 10);
-    // var tableHeight = 400;
-    // $('#table').css('width', tableWidth + 'px');
-    // $('#table').css('height', tableHeight + 'px');
-  //
-  //   };
 
 
     var currentseat;
@@ -129,10 +111,7 @@ app.GridView = Backbone.View.extend({
 
 
 
-     // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
 
-     // $(this).attr('src',"assets/seattaken.png");
-      // $(this).addClass( "active");
 
      $(".seat").not(this).removeClass('active');
       $(this).toggleClass('active');
@@ -151,7 +130,7 @@ app.GridView = Backbone.View.extend({
 
 
      return currentseat;
-      // var currentimage = $(this);
+
 
    });
 
@@ -166,7 +145,7 @@ app.GridView = Backbone.View.extend({
 
      $(currentseat).addClass('bought');
 
-     // debugger;
+
 
      console.log('buy', $seatSelect);
      var seatInfo = $('#seatInfo').html("Purchased Seat is " + $seatSelect);
@@ -178,9 +157,6 @@ app.GridView = Backbone.View.extend({
       reservation.save();
 
       app.reservations.add(reservation);
-      // debugger;
-      // console.log(app.reservations);
-      // app.reservations.fetch();
 
    });
 
@@ -192,17 +168,14 @@ app.GridView = Backbone.View.extend({
 
 
 
+ },
+
+ searchpage: function(){
+
+ app.router.navigate("app", true)
+
+
  }
-
-
- // buyticket: function(){
-  //   console.log("buyticket", $colselect, $rowselect);
-  //
-  //
-  //
-  // }
-
-
 
 
 

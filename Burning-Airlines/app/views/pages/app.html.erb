@@ -17,7 +17,7 @@
   <div id="searchResults">
   </div>
 
-  <div>
+  <div id="flightindex">
     <table>
       <thead>
         <tr>
@@ -59,7 +59,7 @@
   <table id="table"></div>
   <div id='seat'></div>
   <button id='buy' class="redbutton" disabled>Buy Ticket</button>
-  <button id='reservations' class="redbutton">Reservation</button>
+  <button id='reservations' class="redbutton" >Reservation</button>
 
 
 
@@ -78,8 +78,9 @@
 <script type="html/template" id='ReservationViewTemplate'>
 
 <div id="reservations">
-Seat: {{ row }}{{ column }}
+Seat: {{ seatid }}
 Flight:{{ flight_id }}
+Name: {{ user_id }}
 
 <br/>
 

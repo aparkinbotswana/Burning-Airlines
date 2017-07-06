@@ -6,6 +6,8 @@ app.FlightView = Backbone.View.extend({
 
 
   render: function () {
+    $('#reserved').empty();
+
     var rawTemplate = $('#FlightViewTemplate').html();
     var template = _.template( rawTemplate);
 
