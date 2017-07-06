@@ -127,28 +127,5 @@ app.GridView = Backbone.View.extend({
       // app.reservations.fetch();
 
    });
-
-
-
-
-
-
-
-
-
  }
-
-
- // buyticket: function(){
-  //   console.log("buyticket", $colselect, $rowselect);
-  //
-  //
-  //
-  // }
-
-
-
-
-
-
 });
