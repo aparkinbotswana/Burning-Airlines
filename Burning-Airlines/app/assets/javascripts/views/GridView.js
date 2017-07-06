@@ -23,7 +23,7 @@ app.GridView = Backbone.View.extend({
 
   //  app.router.navigate("/reservation", true)
 
-   _.each(app.reservations.models, function(reservation) {
+   _.each(app.reservations.model, function(reservation) {
      var rv = new app.ReservationView({
        model: reservation
      });

@@ -2,7 +2,7 @@ var app = app || {};
 
 app.ReservationView = Backbone.View.extend({
 
-  tagName: "div",
+  nameTag: "div",
 
 
   render: function () {
@@ -12,8 +12,12 @@ app.ReservationView = Backbone.View.extend({
 
 
     var markup = template( this.model.attributes );
+
+    // this.$el.append( markup );
     this.$el.html( markup );
     this.$el.appendTo( "#reserved" );
+
+
 
 
 
