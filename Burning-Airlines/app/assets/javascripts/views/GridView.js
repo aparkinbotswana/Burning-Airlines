@@ -158,6 +158,8 @@ app.GridView = Backbone.View.extend({
 
       app.reservations.add(reservation);
 
+      app.reservations.fetch();
+
    });
 
 

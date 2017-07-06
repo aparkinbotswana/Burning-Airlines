@@ -11,6 +11,7 @@ app.ReservationView = Backbone.View.extend({
 
 
 
+
     var markup = template( this.model.attributes );
 
     // this.$el.append( markup );
