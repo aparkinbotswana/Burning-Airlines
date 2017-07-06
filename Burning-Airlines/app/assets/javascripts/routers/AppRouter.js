@@ -8,7 +8,6 @@ app.AppRouter = Backbone.Router.extend({
     'flights/:id': 'showFlight',
     'reservation': 'showReservation'
 
-
   },
 
   index: function () {

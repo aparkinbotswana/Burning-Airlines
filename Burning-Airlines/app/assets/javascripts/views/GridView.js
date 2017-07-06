@@ -10,18 +10,7 @@ app.GridView = Backbone.View.extend({
 
   showReservation: function(){
 
-<<<<<<< HEAD
-    this.collection.each(function ( reservation ){
-
-      var rlv = new app.ReservationView({
-        model: reservation
-
-      });
-
-      rlv.render();
-   });
-=======
-  //   this.collection.each(function ( reservation ){
+    // this.collection.each(function ( reservation ){
    //
   //     var rlv = new app.ReservationView({
   //       model: reservation
@@ -30,7 +19,6 @@ app.GridView = Backbone.View.extend({
    //
   //     rlv.render();
   //  };
->>>>>>> c11c558477c52978b02d165434f5b5fb6f50fe8f
 
    app.router.navigate("/reservation", true)
 
@@ -72,10 +60,6 @@ app.GridView = Backbone.View.extend({
     });
   });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c11c558477c52978b02d165434f5b5fb6f50fe8f
   var $colselect;
   var $rowselect;
 
