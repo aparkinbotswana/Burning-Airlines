@@ -14,28 +14,6 @@ app.SearchFlightView = Backbone.View.extend({
     app.router.navigate("/flights/" + id, true)
   },
 
-  // events: {
-  //   "click button": "searchFlights"
-  // },
-
-  // searchFlights: function () {
-  //   var $from = $('#from').val();
-  //   var $to = $('#to').val();
-  //   console.log($from, $to);
-  //
-  //   var results = _.filter(app.flights.models, function() {
-  //     return flight.get('from') === $from && flight.get('to') === $to;
-  //   });
-  //
-  //   console.log(results);
-  //
-  //   _.each(results, function() {
-  //     var sv = new app.
-  //   });
-  //
-  // },
-
-
   render: function () {
     var rawTemplate = $('#FlightInfoTemplate').html();
     // this.$el.html( template );
