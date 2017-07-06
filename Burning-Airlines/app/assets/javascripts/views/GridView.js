@@ -18,23 +18,12 @@ app.GridView = Backbone.View.extend({
       });
 
       rlv.render();
-   };
+   });
 
    app.router.navigate("/reservation", true)
 
 
   },
-
-
-
-
-  // events: {
-  //   'click .seat': 'selectSeat'
-  //
-  //   "click #buy": "buyticket",
-  // },
-
-
 
  render: function () {
 
@@ -44,8 +33,6 @@ app.GridView = Backbone.View.extend({
     var markup = template( this.model.attributes );
 
    this.$el.html( markup );
-
-   // renderGrid(4,6);
 
 
   var flight = this.model.attributes.id;
@@ -67,10 +54,8 @@ app.GridView = Backbone.View.extend({
       var $col = $('<td>');
 
 
-     // $('<img class="seat">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
       $col.addClass('seat').attr('colid', colid).attr('rowid', rowid);
 
-     // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
       $col.appendTo($row);
     });
   });
@@ -78,23 +63,6 @@ app.GridView = Backbone.View.extend({
   var $colselect;
   var $rowselect;
 
- // for (var rows = 0; rows < rowsize; rows++) {
-  //
-  //   // set each row to be a new empty array (i.e. of column values)
-  //
-  //   for (var cols = 0; cols < colsize; cols++) {
-  //     var $cell = $('<div class="cell">');
-  //     $('<img class="seat" src="assets/seatempty.png">').appendTo($cell);
-  //     $cell.attr('rows', rows).attr('cols', cols);
-  //     $('#table').append($cell);
-  //   }
-
-   // var tableWidth = 400 + (rowsize * 10);
-    // var tableHeight = 400;
-    // $('#table').css('width', tableWidth + 'px');
-    // $('#table').css('height', tableHeight + 'px');
-  //
-  //   };
 
     var alphabet = ["A","B","C","D","E","F","G"];
       var currentseat;
@@ -104,14 +72,6 @@ app.GridView = Backbone.View.extend({
      if ($(this).hasClass('bought')){
         return;
       };
-
-
-
-
-     // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
-
-     // $(this).attr('src',"assets/seattaken.png");
-      // $(this).addClass( "active");
 
      $(".seat").not(this).removeClass('active');
       $(this).toggleClass('active');
