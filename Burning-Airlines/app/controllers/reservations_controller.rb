@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_logged_in
 
   # GET /reservations
   # GET /reservations.json
@@ -34,7 +35,7 @@ class ReservationsController < ApplicationController
   # POST /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
-    
+
     if @current_user.present?
       @reservation.user_id = @current_user.id
       @reservation.save
