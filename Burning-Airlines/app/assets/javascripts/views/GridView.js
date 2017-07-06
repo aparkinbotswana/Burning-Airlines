@@ -75,7 +75,6 @@ app.GridView = Backbone.View.extend({
     });
   });
 
-  // var $seats = $('<p>').html(seatsLeft);
   $seats.appendTo('#seat')
   console.log(seatsTaken);
   var $colselect;
