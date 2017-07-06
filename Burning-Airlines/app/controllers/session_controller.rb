@@ -1,27 +1,14 @@
 class SessionController < ApplicationController
 
-
   def new
-
   end
 
   def create
 
-
-
     user = User.find_by email: params[:email]
-
-    #
-    #
-    # if user.admin
-    #
-    # redirect_to user_path(user)
-    #
-    # redirect_to user_path(user)
 
     if user.present? and user.authenticate(params[:password])
 
-      # new julian code -- not working
       session[:user_id] = user.id # set the cookie to the user id
       # redirect_to root_path # redirect to user profile
       if user.is_admin
@@ -35,7 +22,6 @@ class SessionController < ApplicationController
       redirect_to login_path
     end
 
-    # end new julian code
 
   end
 

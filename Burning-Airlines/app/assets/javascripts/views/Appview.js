@@ -24,7 +24,6 @@ app.AppView = Backbone.View.extend({
       sv.render();
     });
 
-
   },
 
   render: function() {
@@ -39,10 +38,6 @@ app.AppView = Backbone.View.extend({
       });
 
       flv.render();
-
     });
-
   }
-
-
 });

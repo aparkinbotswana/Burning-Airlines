@@ -18,5 +18,9 @@ $(document).ready(function (){
     Backbone.history.start();
   });
 
+  setInterval(function() {
+    app.flights.fetch();
+  }, 9000);
+
 
 });

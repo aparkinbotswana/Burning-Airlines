@@ -1,16 +1,11 @@
 class UsersController < ApplicationController
   before_action :get_user, only: [:show, :edit, :update, :destroy]
 
-  # new julian code
   before_action :check_if_admin, only: [:index]
 
   def get_user
     @user = User.find params["id"]
   end
-
-
-
-  # end julian code
 
   # GET /users
   # GET /users.json
@@ -35,37 +30,15 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-
-
-
-  # old version of create
-
   def create
     @user = User.create user_params #weijia changed
 
-    # new julian code added
     if @user.id.present?
       session[:user_id] = @user.id # log in using when making a new account
       redirect_to root_path   # /users/17
     else
       render :new
     end
-
-    # end new julian code
-
-
-
-    #
-    # respond_to do |format|
-    #   if @user.save
-    #     format.html { redirect_to user_path(@user), notice: 'User was successfully created.' }
-    #     format.json { render :show, status: :created, location: @user }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @user.errors, status: :unprocessable_entity }
-    #   end
-    # end
-
   end
 
 
@@ -102,19 +75,9 @@ class UsersController < ApplicationController
     end
   end
 
-  # private
-    # Use callbacks to share common setup or constraints between actions.
-    # def get_user
-    #   @user = User.find(params[:id])
-    # end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     private
     def user_params
 
-      #new julian code
       params.require(:user).permit(:email, :name, :password, :password_confirmation)
-      #end new julian code
-      # params.require(:user).permit(:name, :email, :password_digest, :is_admin, :false)
     end
 end
