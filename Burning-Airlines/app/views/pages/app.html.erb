@@ -2,6 +2,7 @@
 <h1>Burning Airlines</h1>
 <p>Search page</p>
 <div id="app"></div>
+<div id="reserved"></div>
 
 <script type="html/template" id="AppViewTemplate">
   <div id="searchFlights">
@@ -71,5 +72,9 @@
 
 <script type="html/template" id='ReservationViewTemplate'>
 <h1>Reservations</h1>
+<div id="reservations">
 {{ row }}
+{{ column }}
+{{ flight_id }}
+</div>
 </script>

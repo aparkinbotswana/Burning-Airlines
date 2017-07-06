@@ -9,6 +9,7 @@ app.GridView = Backbone.View.extend({
   },
 
   showReservation: function(){
+    console.log(app.reservations);
 
     // this.collection.each(function ( reservation ){
    //
@@ -20,7 +21,14 @@ app.GridView = Backbone.View.extend({
   //     rlv.render();
   //  };
 
-   app.router.navigate("/reservation", true)
+  //  app.router.navigate("/reservation", true)
+
+   _.each(app.reservations.models, function(reservation) {
+     var rv = new app.ReservationView({
+       model: reservation
+     });
+     rv.render();
+   });
 
 
   },
