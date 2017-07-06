@@ -4,11 +4,11 @@ var app = app || {};
 app.GridView = Backbone.View.extend({
   el: "#app",
 
-  events: {
-    "click #buy":"buyticket"
-
-  },
-
+  // events: {
+  //   'click .seat': 'selectSeat'
+  //
+  //   "click #buy": "buyticket",
+  // },
 
 
 
@@ -23,7 +23,7 @@ app.GridView = Backbone.View.extend({
 
     // renderGrid(4,6);
 
-
+  var flight = this.model.attributes.id;
   var rowsize = this.model.attributes.airplane.row;
   var colsize = this.model.attributes.airplane.column;
   var totalSeats = rowsize * colsize;
@@ -48,6 +48,9 @@ app.GridView = Backbone.View.extend({
   var $seats = $('<p>').html(seatsLeft);
   $seats.appendTo('#seat')
   console.log(seatsTaken);
+  var $colselect;
+  var $rowselect;
+
   // for (var rows = 0; rows < rowsize; rows++) {
   //
   //   // set each row to be a new empty array (i.e. of column values)
@@ -73,9 +76,24 @@ app.GridView = Backbone.View.extend({
       console.log($(this).attr('rowid'));
       seatsTaken += 1
       console.log('there are ' + seatsTaken + ' seats taken');
-      var colselect = alphabet[($(this).attr('colid')) - 1] ;
-      var rowselect = ($(this).attr('rowid'));
-      console.log("col:" + colselect + "row:" + rowselect);
+      $colselect = alphabet[($(this).attr('colid')) - 1] ;
+      $rowselect = ($(this).attr('rowid'));
+      console.log("col:" + $colselect + "row:" + $rowselect);
+
+    });
+
+    $('#buy').click(function() {
+      console.log('buy', $colselect, $rowselect);
+      var seatInfo = $('#seatInfo').html("Purchased Seat is " + $colselect + $rowselect);
+
+      var reservation = new app.Reservation({
+        row: $rowselect,
+        column: $colselect,
+        flight_id: flight
+      });
+      reservation.save();
+      app.reservations.add(reservation);
+      console.log(app.reservations);
 
     });
 
@@ -87,14 +105,15 @@ app.GridView = Backbone.View.extend({
 
 
 
-  },
-
-
-  buyticket: function(){
-
-
-
   }
+
+
+  // buyticket: function(){
+  //   console.log("buyticket", $colselect, $rowselect);
+  //
+  //
+  //
+  // }
 
 
 
