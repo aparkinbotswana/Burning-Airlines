@@ -31,7 +31,7 @@ app.AppRouter = Backbone.Router.extend({
     // av.render();
 
     var gv = new app.GridView({
-      // model: airplane
+      model: flight
 
     });
 
