@@ -5,11 +5,20 @@ class ReservationsController < ApplicationController
   # GET /reservations.json
   def index
     @reservations = Reservation.all
+
+    respond_to do |format|
+     format.html {}
+     format.json {  render json: @reservations, :include => :flight  }
+    end
   end
 
   # GET /reservations/1
   # GET /reservations/1.json
   def show
+    respond_to do |format|
+     format.html {}
+     format.json {  render json: @reservation, :include => :flight  }
+    end
   end
 
   # GET /reservations/new
@@ -25,6 +34,10 @@ class ReservationsController < ApplicationController
   # POST /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
+    if @current_user.present?
+      @reservation.user_id = @current_user.id
+      @reservation.save
+    end
 
     respond_to do |format|
       if @reservation.save
