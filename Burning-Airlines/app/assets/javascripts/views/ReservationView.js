@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.RervationView = Backbone.View.extend({
+app.ReservationView = Backbone.View.extend({
 
   el: "#app",
 
