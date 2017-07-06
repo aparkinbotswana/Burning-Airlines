@@ -1,4 +1,8 @@
-
+hr {
+  color: #CD5334;
+  border-bottom: solid 4px;
+  margin-top: 0px;
+}
 
 body {
   background-color: #FFFFFC;
@@ -12,22 +16,18 @@ body {
   font-weight: bold;
 }
 
-
 #slogan {
   font-family: 'Dancing Script', cursive;
   font-size: 20px;
   font-style: italic;
   position: relative;
   top: -50px;
-
 }
 
 #plane {
   position: relative;
   top: 20px;
-
 }
-
 
 .heading {
   display: inline-block;
@@ -45,12 +45,14 @@ h1 {
 
 th{
   font-family: 'Roboto', sans-serif;
-
 }
 
 td{
   font-family: 'Roboto', sans-serif;
+}
 
+table {
+  text-align: center;
 }
 
 a {
@@ -64,4 +66,19 @@ a {
 .logo {
   background-color: #FFC466;
   text-align: center;
+}
+
+.redbutton {
+    border-radius: 200px;
+    transition: 0.5s all ease-in-out;
+}
+
+.redbutton:hover {
+    color:red;
+}
+
+#flightindex{
+  display: inline-block;
+  position: fixed;
+  left:500px;
 }

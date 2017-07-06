@@ -8,7 +8,6 @@ app.AppRouter = Backbone.Router.extend({
     'flights/:id': 'showFlight',
     'reservation': 'showReservation'
 
-
   },
 
   index: function () {
@@ -25,17 +24,6 @@ app.AppRouter = Backbone.Router.extend({
     console.log('routed show flight');
     var flight = app.flights.get( id );
 
-    //
-    // var av = new app.AirplaneView({
-    //   model: airplane
-    //
-    // });
-    //
-    // av.render();
-
-
-
-
     var gv = new app.GridView({
       model: flight
     });
@@ -47,34 +35,15 @@ app.AppRouter = Backbone.Router.extend({
     gv.render();
     fv.render();
 
-
   },
 
   showReservation: function(){
 
-    var rv = new app.ReservationView({
-      model: app.reservations
+    _.each(app.reservations.models, function(reservation) {
+      var rv = new app.ReservationView({
+        model: reservation
+      });
+      rv.render();
     });
-
-    rv.render();
-
-  },
-
-
-
-
-  // showGrid: function (  ){
-  //   console.log("this is the grid view, you handsome devil.");
-  //
-  //   var gv = new app.GridView({
-
-  //   });
-  //
-  //   gv.render();
-  //
-  //
-  // }
-
-
-
+  }
 });
