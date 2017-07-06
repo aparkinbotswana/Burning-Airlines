@@ -5,10 +5,13 @@ app.Reservations = Backbone.Collection.extend({
   model: app.Reservation,
 
   initialize: function(){
-    this.on("Add", function( reservation  ){
+    this.on("add", function( reservation  ){
       var name = reservation.get('name');
       console.log('A new reservations collection ' + name + ' was created');
+
     });
   }
+
+
 
 });

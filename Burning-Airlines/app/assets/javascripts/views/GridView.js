@@ -4,7 +4,31 @@ var app = app || {};
 app.GridView = Backbone.View.extend({
   el: "#app",
 
- // events: {
+  events: {
+    "click #reservations": "showReservation",
+  },
+
+  showReservation: function(){
+
+    this.collection.each(function ( reservation ){
+
+      var rlv = new app.ReservationView({
+        model: reservation
+
+      });
+
+      rlv.render();
+   };
+
+   app.router.navigate("/reservation", true)
+
+
+  },
+
+
+
+
+  // events: {
   //   'click .seat': 'selectSeat'
   //
   //   "click #buy": "buyticket",
@@ -22,6 +46,7 @@ app.GridView = Backbone.View.extend({
    this.$el.html( markup );
 
    // renderGrid(4,6);
+
 
   var flight = this.model.attributes.id;
   var rowsize = this.model.attributes.airplane.row;
@@ -51,7 +76,6 @@ app.GridView = Backbone.View.extend({
   });
 
 
-  // $seats.appendTo('#seat')
   console.log(seatsTaken);
   var $colselect;
   var $rowselect;
