@@ -23,7 +23,7 @@ app.GridView = Backbone.View.extend({
 
     // renderGrid(4,6);
 
-
+  var flight = this.model.attributes.id;
   var rowsize = this.model.attributes.airplane.row;
   var colsize = this.model.attributes.airplane.column;
   var totalSeats = rowsize * colsize;
@@ -89,8 +89,13 @@ app.GridView = Backbone.View.extend({
       var reservation = new app.Reservation({
         row: $rowselect,
         column: $colselect,
-
+        flight_id: flight
       });
+      reservation.save();
+      app.reservations.add(reservation);
+      console.log(app.reservations);
+
+    });
 
     });
 
@@ -101,8 +106,15 @@ app.GridView = Backbone.View.extend({
 
 
 
-
   }
+
+
+  // buyticket: function(){
+  //   console.log("buyticket", $colselect, $rowselect);
+  //
+  //
+  //
+  // }
 
 
   // buyticket: function(){
