@@ -10,15 +10,15 @@ app.GridView = Backbone.View.extend({
 
   showReservation: function(){
 
-    this.collection.each(function ( reservation ){
-
-      var rlv = new app.ReservationView({
-        model: reservation
-
-      });
-
-      rlv.render();
-   };
+  //   this.collection.each(function ( reservation ){
+   //
+  //     var rlv = new app.ReservationView({
+  //       model: reservation
+   //
+  //     });
+   //
+  //     rlv.render();
+  //  };
 
    app.router.navigate("/reservation", true)
 
@@ -75,8 +75,7 @@ app.GridView = Backbone.View.extend({
     });
   });
 
-  $seats.appendTo('#seat')
-  console.log(seatsTaken);
+
   var $colselect;
   var $rowselect;
 
