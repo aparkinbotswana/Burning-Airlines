@@ -1,8 +1,9 @@
 
-<h1>Burning Airlines</h1>
-<p>Search page</p>
 <div id="app"></div>
 <div id="reserved"></div>
+
+
+
 
 <script type="html/template" id="AppViewTemplate">
   <div id="searchFlights">
@@ -16,7 +17,7 @@
   <div id="searchResults">
   </div>
 
-  <div>
+  <div id="flightindex">
     <table>
       <thead>
         <tr>
@@ -57,8 +58,8 @@
   <div id="seatInfo"></div>
   <table id="table"></div>
   <div id='seat'></div>
-  <button id='buy' disabled>Buy Ticket</button>
-  <button id='reservations'>Reservation</button>
+  <button id='buy' class="redbutton" disabled>Buy Ticket</button>
+  <button id='reservations' class="redbutton" >Reservation</button>
 
 
 
@@ -70,11 +71,18 @@
 <h1>User</h1>
 </script>
 
+
+
+
+
 <script type="html/template" id='ReservationViewTemplate'>
-<h1>Reservations</h1>
+
 <div id="reservations">
-{{ row }}
-{{ column }}
-{{ flight_id }}
+Seat: {{ seatid }}
+Flight:{{ flight_id }}
+Name: {{ user_id }}
+
+<br/>
+
 </div>
 </script>

@@ -15,6 +15,7 @@ app.FlightListView = Backbone.View.extend({
   },
 
   render: function () {
+    $('#reserved').empty();
 
     var rawTemplate = $('#FlightInfoTemplate').html();
     // this.$el.html( template );

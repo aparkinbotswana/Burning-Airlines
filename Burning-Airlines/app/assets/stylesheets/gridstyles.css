@@ -44,3 +44,8 @@ width:30px;
 height:30px;
 
 }
+
+.searchbutton {
+    border-radius: 200px;
+    /*color:red;*/
+}

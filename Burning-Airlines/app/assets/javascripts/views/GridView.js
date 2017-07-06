@@ -67,9 +67,6 @@ app.GridView = Backbone.View.extend({
       var $col = $('<td>');
 
 
-<<<<<<< HEAD
-      $col.addClass('seat').attr('colid', colid).attr('rowid', rowid);
-=======
 
      // $('<img class="seat">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
       $col.addClass('seat').attr('seatid', alphabet[colid - 1] + rowid);
@@ -79,20 +76,14 @@ app.GridView = Backbone.View.extend({
       }
 
 
->>>>>>> 61371c73d42fe69c1a459a75279e603793144766
 
       $col.appendTo($row);
     });
   });
 
-<<<<<<< HEAD
-  var $colselect;
-  var $rowselect;
-=======
 
   var $seatSelect;
 
->>>>>>> 61371c73d42fe69c1a459a75279e603793144766
 
 
 
