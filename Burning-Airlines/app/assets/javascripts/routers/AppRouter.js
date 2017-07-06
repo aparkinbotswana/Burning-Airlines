@@ -32,7 +32,7 @@ app.AppRouter = Backbone.Router.extend({
     // av.render();
 
     var gv = new app.GridView({
-      model: flight
+      // model: airplane
 
     });
 
@@ -41,32 +41,28 @@ app.AppRouter = Backbone.Router.extend({
 
   },
 
-  showGrid: function (  ){
-    console.log("this is the grid view, you handsome devil.");
-
-    var gv = new app.GridView({
-<<<<<<< HEAD
-=======
-      model: flight
->>>>>>> 6a9b559de8344c79bdc0c671950527dd8d013023
-
-    });
-
-    gv.render();
-
-
-  },
-
-  // showUser: function(  ){
-  //   console.log("this is the user view, you beautiful man.");
+  // showGrid: function (  ){
+  //   console.log("this is the grid view, you handsome devil.");
   //
-  //   var uv = new app.UserView({
+  //   var gv = new app.GridView({
+  //
   //   });
   //
-  //   uv.render();
+  //   gv.render();
   //
   //
-  // }
+  // },
+
+  showUser: function(  ){
+    console.log("this is the user view, you beautiful man.");
+
+    var uv = new app.UserView({
+    });
+
+    uv.render();
+
+
+  }
 
 
 

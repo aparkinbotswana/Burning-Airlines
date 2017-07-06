@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   # new julian code
   before_action :fetch_user
 
+
+
   private
   def fetch_user
     # session[:user_id] = nil
@@ -22,8 +24,6 @@ class ApplicationController < ActionController::Base
   end
 
   # end new julian code
-
-
 
 
 
