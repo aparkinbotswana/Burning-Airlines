@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.RervationView = Backbone.View.extend({
+app.ReservationView = Backbone.View.extend({
 
   el: "#app",
 
@@ -14,6 +14,8 @@ app.RervationView = Backbone.View.extend({
     this.$el.html( markup );
 
   }
+
+
 
 
 });
