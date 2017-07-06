@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reservations</h1>
+<h1>
+  <%= link_to 'Reservations', reservations_path %> |
+  <%= link_to 'Airplanes', airplanes_path %> |
+  <%= link_to 'Flights', flights_path %>
+</h1>
 
 <table>
   <thead>
@@ -16,8 +20,8 @@
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.user_id %></td>
-        <td><%= reservation.flight_id %></td>
+        <td><%= reservation.user.name %></td>
+        <td><%= reservation.flight.name %></td>
         <td><%= reservation.row %></td>
         <td><%= reservation.column %></td>
         <td><%= link_to 'Show', reservation %></td>
