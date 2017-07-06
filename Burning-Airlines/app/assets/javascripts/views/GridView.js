@@ -76,10 +76,6 @@ app.GridView = Backbone.View.extend({
   });
 
 
-<<<<<<< HEAD
-=======
-  console.log(seatsTaken);
->>>>>>> b1fc1dffff7ff5259f96063b0ece30918885362b
   var $colselect;
   var $rowselect;
 
