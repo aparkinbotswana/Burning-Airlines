@@ -1,5 +1,8 @@
+
+
 body {
   background-color: #FFFFFC;
+  margin: 0
 }
 
 #companyName {
@@ -25,5 +28,6 @@ p{
 }
 
 .logo {
-  background-color: #DB953F
+  background-color: #FFC466;
+  text-align: center;
 }
