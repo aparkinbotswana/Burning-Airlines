@@ -1,0 +1,29 @@
+body {
+  background-color: #FFFFFC;
+}
+
+#companyName {
+  font-family: 'Comfortaa', cursive;
+  font-size: 68px;
+  font-weight: bold;
+}
+
+
+#slogan {
+  font-family: 'Dancing Script', cursive;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.heading {
+  display: inline-block;
+}
+
+p{
+  font-family: 'Roboto', sans-serif;
+  color: #000022
+}
+
+.logo {
+  background-color: #DB953F
+}
