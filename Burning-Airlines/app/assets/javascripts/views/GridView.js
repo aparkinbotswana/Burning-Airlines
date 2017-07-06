@@ -4,13 +4,20 @@ var app = app || {};
 app.GridView = Backbone.View.extend({
   el: "#app",
 
+  events: {
+    "click #buy":"buyticket"
+
+  },
+
 
 
 
   render: function () {
     // var rawTemplate = $('#GridViewTemplate').html();
     var template = _.template($("#GridViewTemplate").html(), {} );
-    this.$el.html( template );
+    var markup = template( this.model.attributes );
+
+    this.$el.html( markup );
 
     // renderGrid(4,6);
 
@@ -56,6 +63,7 @@ app.GridView = Backbone.View.extend({
     // $('#table').css('height', tableHeight + 'px');
   //
   //   };
+    var alphabet = ["a","b","c","d"];
 
     $('.seat').click(function(){
       $(this).attr('src',"assets/seattaken.png");
@@ -63,6 +71,9 @@ app.GridView = Backbone.View.extend({
       console.log($(this).attr('rowid'));
       seatsTaken += 1
       console.log('there are ' + seatsTaken + ' seats taken');
+      var colselect = alphabet[($(this).attr('colid')) - 1] ;
+      var rowselect = ($(this).attr('rowid'));
+      console.log("col:" + colselect + "row:" + rowselect);
 
     });
 
@@ -70,5 +81,22 @@ app.GridView = Backbone.View.extend({
 
 
 
+
+
+
+
   },
+
+
+  buyticket: function(){
+
+
+
+  }
+
+
+
+
+
+
 });

@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.FlightView = Backbone.View.extend({
-  el: "#app",
+  el: "#flightname",
 
   render: function () {
     var rawTemplate = $('#FlightViewTemplate').html();
