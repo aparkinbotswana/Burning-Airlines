@@ -14,9 +14,19 @@ body {
 
 #slogan {
   font-family: 'Dancing Script', cursive;
-  font-size: 16px;
+  font-size: 20px;
   font-style: italic;
+  position: relative;
+  top: -50px;
+
 }
+
+#plane {
+  position: relative;
+  top: 20px;
+
+}
+
 
 .heading {
   display: inline-block;
@@ -24,7 +34,26 @@ body {
 
 p{
   font-family: 'Roboto', sans-serif;
-  color: #000022
+  color: #2E282A;
+}
+
+h1 {
+  color: #2E282A;
+  font-family: 'Roboto', sans-serif;
+}
+
+th{
+  font-family: 'Roboto', sans-serif;
+
+}
+
+td{
+  font-family: 'Roboto', sans-serif;
+
+}
+
+a {
+  text-decoration: none;
 }
 
 .logo {
