@@ -4,6 +4,27 @@ var app = app || {};
 app.GridView = Backbone.View.extend({
   el: "#app",
 
+  events: {
+    "click #reservations": "showReservation",
+  },
+
+  showReservation: function(){
+
+    this.collection.each(function ( reservation ){
+
+      var rlv = new app.ReservationView({
+        model: reservation
+
+      });
+
+      rlv.render();
+   };
+
+  },
+
+
+
+
   // events: {
   //   'click .seat': 'selectSeat'
   //
@@ -22,6 +43,7 @@ app.GridView = Backbone.View.extend({
     this.$el.html( markup );
 
     // renderGrid(4,6);
+
 
   var flight = this.model.attributes.id;
   var rowsize = this.model.attributes.airplane.row;
@@ -104,6 +126,8 @@ app.GridView = Backbone.View.extend({
       var seatInfo = $('#seatInfo').html("Selected Seat:" + $colselect + $rowselect);
       currentseat = $(this);
 
+
+
       if (!currentseat.hasClass('active')){
         $('#buy').attr("disabled", true);
       } else {
@@ -153,7 +177,9 @@ app.GridView = Backbone.View.extend({
 
 
 
-  }
+  },
+
+
 
 
   // buyticket: function(){

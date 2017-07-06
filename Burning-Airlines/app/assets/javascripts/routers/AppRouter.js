@@ -5,8 +5,8 @@ app.AppRouter = Backbone.Router.extend({
     '': 'index',
     'app': 'index',
     'grid': 'showGrid',
-    'flights/:id': 'showFlight'
-
+    'flights/:id': 'showFlight',
+    'reservation': 'showReservation'
 
 
   },
@@ -48,7 +48,20 @@ app.AppRouter = Backbone.Router.extend({
     fv.render();
 
 
-  }
+  },
+
+  showReservation: function(){
+
+    var rv = new app.ReservationView({
+      model: app.reservations
+    });
+
+    rv.render();
+
+  },
+
+
+
 
   // showGrid: function (  ){
   //   console.log("this is the grid view, you handsome devil.");
