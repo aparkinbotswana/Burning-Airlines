@@ -43,7 +43,7 @@ app.GridView = Backbone.View.extend({
 
 
       // $('<img class="seat">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
-      $col.addClass('seat');
+      $col.addClass('seat').attr('colid', colid).attr('rowid', rowid);
 
       // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
       $col.appendTo($row);
@@ -74,7 +74,7 @@ app.GridView = Backbone.View.extend({
   //
   //   };
     var alphabet = ["a","b","c","d"];
-      var currentimage;
+
 
     $('.seat').click(function(){
 
@@ -114,6 +114,8 @@ app.GridView = Backbone.View.extend({
       reservation.save();
       app.reservations.add(reservation);
       console.log(app.reservations);
+      app.reservations.fetch();
+
 
     });
 
