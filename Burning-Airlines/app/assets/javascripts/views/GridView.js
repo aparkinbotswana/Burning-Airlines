@@ -74,9 +74,19 @@ app.GridView = Backbone.View.extend({
   //
   //   };
     var alphabet = ["a","b","c","d"];
+<<<<<<< HEAD
 
+=======
+      var currentseat;
+>>>>>>> 96b581d2f506207080ff810d6d5a6d8b4c39635d
 
     $('.seat').click(function(){
+
+      if ($(this).hasClass('bought')){
+        return;
+      };
+
+
 
 
       // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
@@ -95,14 +105,26 @@ app.GridView = Backbone.View.extend({
       $colselect = alphabet[($(this).attr('colid')) - 1] ;
       $rowselect = ($(this).attr('rowid'));
       console.log("col:" + $colselect + "row:" + $rowselect);
+      var seatInfo = $('#seatInfo').html("Selected Seat:" + $colselect + $rowselect);
+      currentseat = $(this);
+      return currentseat;
       // var currentimage = $(this);
-
 
     });
 
 
 
     $('#buy').click(function() {
+
+      if ($(currentseat).hasClass('bought')){
+        return;
+      };
+
+
+      $(currentseat).addClass('bought');
+
+      // debugger;
+
       console.log('buy', $colselect, $rowselect);
       var seatInfo = $('#seatInfo').html("Purchased Seat is " + $colselect + $rowselect);
 
