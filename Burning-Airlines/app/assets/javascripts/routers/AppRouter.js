@@ -52,13 +52,15 @@ app.AppRouter = Backbone.Router.extend({
 
   showReservation: function(){
 
-    var rv = new app.ReservationView({
-      model: app.reservations
+    _.each(app.reservations.models, function(reservation) {
+      var rv = new app.ReservationView({
+        model: reservation
+      });
+      rv.render();
     });
 
-    rv.render();
 
-  },
+  }
 
 
 
