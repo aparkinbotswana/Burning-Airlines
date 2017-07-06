@@ -33,16 +33,16 @@ app.GridView = Backbone.View.extend({
 
 
 
-  render: function () {
+ render: function () {
 
 
-    // var rawTemplate = $('#GridViewTemplate').html();
+   // var rawTemplate = $('#GridViewTemplate').html();
     var template = _.template($("#GridViewTemplate").html(), {} );
     var markup = template( this.model.attributes );
 
-    this.$el.html( markup );
+   this.$el.html( markup );
 
-    // renderGrid(4,6);
+   // renderGrid(4,6);
 
 
   var flight = this.model.attributes.id;
@@ -52,22 +52,22 @@ app.GridView = Backbone.View.extend({
   var seatsTaken = 0;
   var seatsLeft = totalSeats - seatsTaken;
 
-  console.log(rowsize, colsize);
+ console.log(rowsize, colsize);
 
-  var row = _.range(1, rowsize+1);
+ var row = _.range(1, rowsize+1);
   var col = _.range(1, colsize+1);
 
-  _.each(row, function(rowid) {
+ _.each(row, function(rowid) {
     var $row = $('<tr>');
     $row.appendTo("#table");
     _.each(col, function(colid) {
       var $col = $('<td>');
 
 
-      // $('<img class="seat">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
+     // $('<img class="seat">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
       $col.addClass('seat').attr('colid', colid).attr('rowid', rowid);
 
-      // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
+     // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
       $col.appendTo($row);
     });
   });
@@ -78,7 +78,7 @@ app.GridView = Backbone.View.extend({
   var $colselect;
   var $rowselect;
 
-  // for (var rows = 0; rows < rowsize; rows++) {
+ // for (var rows = 0; rows < rowsize; rows++) {
   //
   //   // set each row to be a new empty array (i.e. of column values)
   //
@@ -89,33 +89,34 @@ app.GridView = Backbone.View.extend({
   //     $('#table').append($cell);
   //   }
 
-    // var tableWidth = 400 + (rowsize * 10);
+   // var tableWidth = 400 + (rowsize * 10);
     // var tableHeight = 400;
     // $('#table').css('width', tableWidth + 'px');
     // $('#table').css('height', tableHeight + 'px');
   //
   //   };
-    var alphabet = ["a","b","c","d"];
+
+    var alphabet = ["A","B","C","D","E","F","G"];
       var currentseat;
 
-    $('.seat').click(function(){
+   $('.seat').click(function(){
 
-      if ($(this).hasClass('bought')){
+     if ($(this).hasClass('bought')){
         return;
       };
 
 
 
 
-      // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
+     // $('<img class="seat" src="assets/seatempty.png">').appendTo($col).attr('colid', colid).attr('rowid', rowid);
 
-      // $(this).attr('src',"assets/seattaken.png");
+     // $(this).attr('src',"assets/seattaken.png");
       // $(this).addClass( "active");
 
-      $(".seat").not(this).removeClass('active');
+     $(".seat").not(this).removeClass('active');
       $(this).toggleClass('active');
 
-      console.log($(this));
+     console.log($(this));
       console.log($(this).attr('colid'));
       console.log($(this).attr('rowid'));
       seatsTaken += 1
@@ -126,48 +127,46 @@ app.GridView = Backbone.View.extend({
       var seatInfo = $('#seatInfo').html("Selected Seat:" + $colselect + $rowselect);
       currentseat = $(this);
 
-
-
-      if (!currentseat.hasClass('active')){
+     if (!currentseat.hasClass('active')){
         $('#buy').attr("disabled", true);
       } else {
         $('#buy').removeAttr("disabled");
       };
 
 
-      return currentseat;
+     return currentseat;
       // var currentimage = $(this);
 
-    });
+   });
 
 
 
-    $('#buy').click(function() {
+   $('#buy').click(function() {
 
-      if ($(currentseat).hasClass('bought')){
+     if ($(currentseat).hasClass('bought')){
         return;
       };
 
 
-      $(currentseat).addClass('bought');
+     $(currentseat).addClass('bought');
 
-      // debugger;
+     // debugger;
 
-      console.log('buy', $colselect, $rowselect);
+     console.log('buy', $colselect, $rowselect);
       var seatInfo = $('#seatInfo').html("Purchased Seat is " + $colselect + $rowselect);
 
-      var reservation = new app.Reservation({
+     var reservation = new app.Reservation({
         row: $rowselect,
         column: $colselect,
         flight_id: flight
       });
       reservation.save();
       app.reservations.add(reservation);
-      debugger;
+      // debugger;
       // console.log(app.reservations);
       // app.reservations.fetch();
 
-    });
+   });
 
 
 
@@ -177,12 +176,10 @@ app.GridView = Backbone.View.extend({
 
 
 
-  },
+ }
 
 
-
-
-  // buyticket: function(){
+ // buyticket: function(){
   //   console.log("buyticket", $colselect, $rowselect);
   //
   //
