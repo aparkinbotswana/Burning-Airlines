@@ -99,10 +99,18 @@ app.GridView = Backbone.View.extend({
       seatsTaken += 1
       console.log('there are ' + seatsTaken + ' seats taken');
       $colselect = alphabet[($(this).attr('colid')) - 1] ;
-      $rowselect = ($(this).attr('rowid'));
+      $rowselect = $(this).attr('rowid');
       console.log("col:" + $colselect + "row:" + $rowselect);
       var seatInfo = $('#seatInfo').html("Selected Seat:" + $colselect + $rowselect);
       currentseat = $(this);
+
+      if (!currentseat.hasClass('active')){
+        $('#buy').attr("disabled", true);
+      } else {
+        $('#buy').removeAttr("disabled");
+      };
+
+
       return currentseat;
       // var currentimage = $(this);
 
@@ -131,7 +139,9 @@ app.GridView = Backbone.View.extend({
       });
       reservation.save();
       app.reservations.add(reservation);
-      console.log(app.reservations);
+      debugger;
+      // console.log(app.reservations);
+      // app.reservations.fetch();
 
     });
 
