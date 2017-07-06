@@ -1,8 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
-
-  # new julian code
   before_action :fetch_user
 
   private
@@ -22,9 +19,5 @@ class ApplicationController < ActionController::Base
   end
 
   # end new julian code
-
-
-
-
 
 end

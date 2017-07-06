@@ -1,5 +1,10 @@
 class AirplanesController < ApplicationController
+  before_action :check_if_logged_in, only: [:show, :edit, :update, :destroy, :new, :create, :index]
+
   before_action :set_airplane, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_admin, only: [:show, :edit, :update, :destroy, :new, :create, :index]
+
+
 
   # GET /airplanes
   # GET /airplanes.json
