@@ -8,6 +8,8 @@ app.GridView = Backbone.View.extend({
 
 
   render: function () {
+
+
     // var rawTemplate = $('#GridViewTemplate').html();
     var template = _.template($("#GridViewTemplate").html(), {} );
     this.$el.html( template );
