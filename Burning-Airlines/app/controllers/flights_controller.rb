@@ -3,7 +3,12 @@ class FlightsController < ApplicationController
 
   # GET /flights
   # GET /flights.json
+
+
   def index
+
+
+
     @flights = Flight.all
 
     respond_to do |format|
@@ -75,6 +80,9 @@ class FlightsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_flight
       @flight = Flight.find(params[:id])
+      # @current_user = User.find session[:user_id] if
+
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
