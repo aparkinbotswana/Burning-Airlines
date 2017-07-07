@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
 
     respond_to do |format|
      format.html {}
-     format.json {  render json: @reservations, :include => :flight  }
+     format.json {  render json: @reservations, :include => [:flight, :user]  }
     end
   end
 
@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
   def show
     respond_to do |format|
      format.html {}
-     format.json {  render json: @reservation, :include => :flight  }
+     format.json {  render json: @reservation, :include => [:flight, :user]  }
     end
   end
 

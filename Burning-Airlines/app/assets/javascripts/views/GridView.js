@@ -9,17 +9,25 @@ app.GridView = Backbone.View.extend({
   },
 
   showReservation: function(){
-    console.log(app.reservations);
 
-   _.each(app.reservations.models, function(reservation) {
-     var rv = new app.ReservationView({
-       model: reservation
-     });
-     rv.render();
-   });
+  this.$el.empty();
+  this.$el.html("<h1>Reservations</h1>");
+  app.router.navigate("/reservation", true)
+
+
+  //   console.log(app.reservations);
+   //
+  //  _.each(app.reservations.models, function(reservation) {
+  //    var rv = new app.ReservationView({
+  //      model: reservation
+  //    });
+  //    rv.render();
+  //  });
   },
 
     render: function() {
+
+    app.reservations.fetch();
 
     var template = _.template($("#GridViewTemplate").html(), {});
     var markup = template(this.model.attributes);
